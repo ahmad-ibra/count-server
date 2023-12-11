@@ -16,8 +16,7 @@ http://localhost:8080/count.v1.CountService/Count
 ## Useful Commands
 Verify that the proto is valid:
 ```
-❯ cd proto
-❯ buf build
+❯ buf build proto
 ❯ echo $?
 ```
 The output should be `0`
@@ -30,4 +29,15 @@ Generate code:
 Lint the API:
 ```
 ❯ buf lint proto
+```
+
+Update buf dependencies to the latest versions:
+```
+❯ cd proto
+❯ buf mod update
+```
+
+Push new versions of the API:
+```
+❯ buf push proto
 ```
