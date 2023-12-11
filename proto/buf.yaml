@@ -1,4 +1,5 @@
 version: v1
+name: buf.build/ahmad-ibrahim/count-api
 breaking:
   use:
     - FILE
