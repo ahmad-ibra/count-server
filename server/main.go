@@ -13,7 +13,7 @@ import (
 	"golang.org/x/net/http2/h2c"
 )
 
-const address = "localhost:8080"
+const address = "0.0.0.0:8080"
 
 var count = 0
 
