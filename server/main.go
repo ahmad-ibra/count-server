@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	connect "connectrpc.com/connect"
 	countv1 "github.com/ahmad-ibra/count-server/gen/count/v1"
@@ -13,7 +14,7 @@ import (
 	"golang.org/x/net/http2/h2c"
 )
 
-const address = "0.0.0.0:8080"
+const address = "0.0.0.0"
 
 var count = 0
 
@@ -21,10 +22,10 @@ func main() {
 	mux := http.NewServeMux()
 	path, handler := countv1connect.NewCountServiceHandler(&countServiceServer{})
 	mux.Handle(path, handler)
-	fmt.Printf("Listening on %v...\n", address)
+	port := os.Getenv("PORT")
+	fmt.Printf("Listening on %v:%v...\n", address, port)
 	http.ListenAndServe(
-		address,
-		// Use h2c so we can serve HTTP/2 without TLS.
+		address+":"+port,
 		h2c.NewHandler(mux, &http2.Server{}),
 	)
 }
