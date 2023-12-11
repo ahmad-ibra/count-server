@@ -43,3 +43,9 @@ Push new versions of the API:
 ```
 ❯ buf push proto
 ```
+
+Push new version of the image:
+```
+❯ docker build -t ahmadibraspectrocloud/count-server:latest .
+❯ docker push ahmadibraspectrocloud/count-server:latest
+```
