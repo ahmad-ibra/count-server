@@ -1,4 +1,6 @@
 # count-server
+- [Companion client](https://github.com/ahmad-ibra/count-client)
+- [Running on k8s](https://github.com/ahmad-ibra/count-k8s)
 
 ## Usage
 Run the count-server container via docker:
