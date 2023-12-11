@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package count.v1;
+
+message CountRequest {
+}
+
+message CountResponse {
+}
+
+service CountService {
+  rpc Count(CountRequest) returns (CountResponse) {}
+}
+
