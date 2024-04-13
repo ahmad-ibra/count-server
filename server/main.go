@@ -17,7 +17,7 @@ import (
 
 const address = "0.0.0.0"
 
-var count = 0
+var count int32 = 0
 
 func main() {
 	mux := http.NewServeMux()
@@ -42,5 +42,5 @@ func (s *countServiceServer) Count(ctx context.Context, req *connect.Request[cou
 	name := req.Msg.Name
 
 	log.Printf("Got a request from %s to count: %d", name, count)
-	return connect.NewResponse(&countv1.CountResponse{}), nil
+	return connect.NewResponse(&countv1.CountResponse{Count: count}), nil
 }
