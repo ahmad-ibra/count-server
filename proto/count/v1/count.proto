@@ -3,9 +3,11 @@ syntax = "proto3";
 package count.v1;
 
 message CountRequest {
+    string name = 1;
 }
 
 message CountResponse {
+    int32 count = 1;
 }
 
 service CountService {

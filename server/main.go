@@ -37,11 +37,10 @@ type countServiceServer struct {
 }
 
 // Count counts the number of times it has been called.
-func (s *countServiceServer) Count(
-	ctx context.Context,
-	req *connect.Request[countv1.CountRequest],
-) (*connect.Response[countv1.CountResponse], error) {
+func (s *countServiceServer) Count(ctx context.Context, req *connect.Request[countv1.CountRequest]) (*connect.Response[countv1.CountResponse], error) {
 	count++
-	log.Printf("Got a request to count: %d", count)
+	name := req.Msg.Name
+
+	log.Printf("Got a request from %s to count: %d", name, count)
 	return connect.NewResponse(&countv1.CountResponse{}), nil
 }
