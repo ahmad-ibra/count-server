@@ -8,10 +8,11 @@ import (
 	"os"
 
 	connect "connectrpc.com/connect"
-	countv1 "github.com/ahmad-ibra/count-server/gen/count/v1"
-	"github.com/ahmad-ibra/count-server/gen/count/v1/countv1connect"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
+
+	countv1 "github.com/ahmad-ibra/count-server/gen/count/v1"
+	"github.com/ahmad-ibra/count-server/gen/count/v1/countv1connect"
 )
 
 const address = "0.0.0.0"
